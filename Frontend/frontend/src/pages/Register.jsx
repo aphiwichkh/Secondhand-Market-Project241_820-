@@ -39,16 +39,16 @@ function Register() {
   return (
     <section className="card auth-card">
       <div className="stack-sm">
-        <p className="eyebrow">Account</p>
-        <h2>Create account</h2>
+        <p className="eyebrow">บัญชีผู้ใช้ / Account</p>
+        <h2>สร้างบัญชี / Create account</h2>
         <p className="muted">
-          Register once, then add and manage your own marketplace products.
+          สมัครสมาชิกครั้งเดียว แล้วสามารถลงขายและจัดการสินค้าได้ตลอด / Register once, then manage your marketplace products.
         </p>
       </div>
 
       <form className="stack-md" onSubmit={handleSubmit}>
         <label className="field">
-          <span>Username</span>
+          <span>ชื่อผู้ใช้ / Username</span>
           <input
             className="input"
             name="username"
@@ -61,7 +61,7 @@ function Register() {
         </label>
 
         <label className="field">
-          <span>Email</span>
+          <span>อีเมล / Email</span>
           <input
             className="input"
             name="email"
@@ -74,13 +74,13 @@ function Register() {
         </label>
 
         <label className="field">
-          <span>Password</span>
+          <span>รหัสผ่าน / Password</span>
           <input
             className="input"
             minLength="6"
             name="password"
             onChange={handleChange}
-            placeholder="At least 6 characters"
+            placeholder="อย่างน้อย 6 ตัวอักษร / At least 6 characters"
             required
             type="password"
             value={formData.password}
@@ -95,7 +95,7 @@ function Register() {
       </form>
 
       <p className="muted">
-        Already have an account? <Link to="/login">Login</Link>
+        มีบัญชีแล้วใช่ไหม? <Link to="/login">เข้าสู่ระบบ / Login</Link>
       </p>
     </section>
   );

@@ -3,6 +3,7 @@ import AuthLayout from "./components/AuthLayout";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AddProduct from "./pages/Addproduct";
+import Chat from "./pages/Chat";
 import Login from "./pages/login";
 import Products from "./pages/Products";
 import Register from "./pages/Register";
@@ -14,7 +15,23 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Products />} />
           <Route
+            path="/chat"
+            element={
+              <ProtectedRoute>
+                <Chat />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/add-product"
+            element={
+              <ProtectedRoute>
+                <AddProduct />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/edit-product/:id"
             element={
               <ProtectedRoute>
                 <AddProduct />

@@ -17,16 +17,16 @@ function Layout() {
           {!isAuthenticated ? (
             <>
               <NavLink className="ghost-button auth-link-button" to="/login">
-                Login
+                เข้าสู่ระบบ / Login
               </NavLink>
               <NavLink className="primary-button auth-link-button" to="/register">
-                Register
+                สมัครสมาชิก / Register
               </NavLink>
             </>
           ) : null}
           {isAuthenticated ? (
             <button className="ghost-button" onClick={logout} type="button">
-              Logout
+              ออกจากระบบ / Logout
             </button>
           ) : null}
         </div>
@@ -37,13 +37,19 @@ function Layout() {
           className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
           to="/"
         >
-          Products
+          สินค้า / Products
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+          to="/chat"
+        >
+          แชท / Chat
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
           to="/add-product"
         >
-          Add Product
+          เพิ่มสินค้า / Add Product
         </NavLink>
       </nav>
 

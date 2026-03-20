@@ -126,10 +126,10 @@ function Products() {
     <section className="stack-lg">
       <div className="hero-card">
         <div>
-          <p className="eyebrow">Marketplace</p>
-          <h2>Browse the latest secondhand listings.</h2>
+          <p className="eyebrow">ตลาดสินค้า</p>
+          <h2>ค้นหาสินค้ามือสองล่าสุด / Browse latest secondhand listings.</h2>
           <p className="muted">
-            The list comes from the Express API and reflects the current MySQL data.
+            ค้นหาประกาศสินค้าและติดต่อผู้ขายได้ทันที / Browse listings and contact sellers immediately.
           </p>
         </div>
 
@@ -137,12 +137,12 @@ function Products() {
           <input
             className="input"
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search by title or description"
+            placeholder="ค้นหาด้วยชื่อหรือคำอธิบาย / Search by title or description"
             type="text"
             value={search}
           />
           <button className="primary-button" type="submit">
-            Search
+            ค้นหา / Search
           </button>
         </form>
       </div>
@@ -179,26 +179,35 @@ function Products() {
               <div className="product-meta">
                 <span className="price">{formatPrice(product.price)}</span>
                 <span className="muted">
-                  Seller: {product.username || "Unknown seller"}
+                  ผู้ขาย / Seller: {product.username || "Unknown seller"}
                 </span>
               </div>
 
               {isOwner ? (
-                <button
-                  className="danger-button"
-                  disabled={deletingId === product.id}
-                  onClick={() => handleDelete(product.id)}
-                  type="button"
-                >
-                  {deletingId === product.id ? "Deleting..." : "Delete"}
-                </button>
+                <div className="button-row">
+                  <button
+                    className="ghost-button"
+                    onClick={() => navigate(`/edit-product/${product.id}`)}
+                    type="button"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="danger-button"
+                    disabled={deletingId === product.id}
+                    onClick={() => handleDelete(product.id)}
+                    type="button"
+                  >
+                    {deletingId === product.id ? "Deleting..." : "Delete"}
+                  </button>
+                </div>
               ) : (
                 <button
                   className="ghost-button"
                   onClick={() => openMessageComposer(product)}
                   type="button"
                 >
-                  Contact seller
+                  ติดต่อผู้ขาย / Contact seller
                 </button>
               )}
             </article>
@@ -223,7 +232,7 @@ function Products() {
               </div>
 
               <button className="ghost-button" onClick={closeMessageComposer} type="button">
-                Close
+                ปิด / Close
               </button>
             </div>
 

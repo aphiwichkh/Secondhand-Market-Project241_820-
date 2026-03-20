@@ -69,10 +69,12 @@ exports.getMessagesByUser = async (req, res) => {
         SELECT
           messages.*,
           sender.username AS sender_name,
-          receiver.username AS receiver_name
+          receiver.username AS receiver_name,
+          products.title AS product_title
         FROM messages
         LEFT JOIN users AS sender ON messages.sender_id = sender.id
         LEFT JOIN users AS receiver ON messages.receiver_id = receiver.id
+        LEFT JOIN products ON messages.product_id = products.id
         WHERE messages.receiver_id = ?
         ORDER BY messages.created_at DESC, messages.id DESC
       `,

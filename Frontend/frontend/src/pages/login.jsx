@@ -40,14 +40,14 @@ function Login() {
   return (
     <section className="card auth-card">
       <div className="stack-sm">
-        <p className="eyebrow">Account</p>
-        <h2>Login</h2>
-        <p className="muted">Use your account to manage your marketplace listings.</p>
+        <p className="eyebrow">บัญชีผู้ใช้ / Account</p>
+        <h2>เข้าสู่ระบบ / Login</h2>
+        <p className="muted">เข้าสู่ระบบเพื่อจัดการประกาศในตลาดของคุณ / Sign in to manage your listings.</p>
       </div>
 
       <form className="stack-md" onSubmit={handleSubmit}>
         <label className="field">
-          <span>Email</span>
+          <span>อีเมล / Email</span>
           <input
             className="input"
             name="email"
@@ -60,12 +60,12 @@ function Login() {
         </label>
 
         <label className="field">
-          <span>Password</span>
+          <span>รหัสผ่าน / Password</span>
           <input
             className="input"
             name="password"
             onChange={handleChange}
-            placeholder="Your password"
+            placeholder="รหัสผ่านของคุณ / Your password"
             required
             type="password"
             value={formData.password}
@@ -80,7 +80,7 @@ function Login() {
       </form>
 
       <p className="muted">
-        No account yet? <Link to="/register">Create one</Link>
+        ไม่มีบัญชีใช่ไหม? <Link to="/register">สร้างบัญชีใหม่ / Create account</Link>
       </p>
     </section>
   );
